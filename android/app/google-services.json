@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "758569137020",
+    "project_id": "cepte-stok",
+    "storage_bucket": "cepte-stok.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:758569137020:android:11e7d402e30ea9fa1f6af9",
+        "android_client_info": {
+          "package_name": "com.pengona.stoktakip"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCU8-93lt9qaCUkYo2ohc8l06jjxOpD4RI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
