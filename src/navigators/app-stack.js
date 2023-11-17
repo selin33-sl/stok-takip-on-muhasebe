@@ -38,54 +38,42 @@ export const AppStack = () => {
       const tokenCreationTime = await AsyncStorage.getItem('tokenCreationTime');
       const tokenCreationTimeUTC = new Date(parseInt(tokenCreationTime));
 
-      console.log(tokenCreationTime, "tokenCreationTime");
+   
 
       const tokenCreationTimee = new Date(parseInt(tokenCreationTime)).toLocaleString('tr-TR');
 
-      console.log(tokenCreationTimee, "tokenCreationTimeeeeee");
+     
 
       const currentTimeUTC = new Date();
       const expirationTimeUTC = new Date(tokenCreationTimeUTC.getTime() + 7 * 24 * 60 * 60 * 1000);
 
-      console.log(currentTimeUTC, "currentTimeUTC");
-      console.log(expirationTimeUTC, "expirationTimeUTC");
-
+   
 
       if (accessToken && tokenCreationTimee) {
 
         const currentTime = new Date().getTime();
 
-        // console.log(currentTime, "currentTime");
-
-        // console.log(currentTimeUTC, "currentTimeeeeeeeeeeeee")
-        // console.log(expirationTimeUTC, "expirationTime")
-
-        // console.log(expirationTimee, "expirationTimee");
-        console.log(currentTimeUTC, "currentTimeUTC");
-        console.log(expirationTimeUTC, "expirationTimeUTC");
+       
 
         if (currentTimeUTC >= expirationTimeUTC) {
-          console.log("22222222222222222222");
+        
           // Token süresi dolmuş, kullanıcıyı oturum açmaya yönlendirin.
           AsyncStorage.removeItem('accessToken');
           AsyncStorage.removeItem('tokenCreationTime');
           dispatch(changeAuthentication('0'));
         } else {
-          console.log("33333333333333333333");
-          console.log(currentTimeUTC, "currentTimeUTC");
-          console.log(expirationTimeUTC, "expirationTimeUTC");
-          console.log(accessToken, "accessTokennnnnnn");
+          
           // Token hala geçerli, oturumu açın.
           dispatch(changeAuthentication('1'));
         }
       }
 
       else {
-        console.log("444444444444444444444");
+       
         dispatch(changeAuthentication('0'));
       }
     };
-    console.log("55555555555555555555555");
+  
     checkTokenExpiration();
   }, []);
 
