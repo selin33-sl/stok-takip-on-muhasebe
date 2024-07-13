@@ -77,7 +77,6 @@ export const UrunEkleScreen = () => {
   const { data: AllCategoriesData } = useSelector(state => state.getCategories);
   const { status: addProductStatus, message: AddNewProductMessage } = useSelector((state) => state.addNewProduct);
 
-  console.log(AllCategoriesData, "ÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇ");
 
 
   useEffect(() => {
@@ -85,7 +84,6 @@ export const UrunEkleScreen = () => {
     setAddProductToastError(false)
 
     if (addProductStatus === "error") {
-      console.log(AddNewProductMessage, "eeeeeeeeeeeeeeeeeeeeeeeee");
       setAddProductToastError(true)
 
       // dispatch(resetAddProduct());
@@ -93,7 +91,6 @@ export const UrunEkleScreen = () => {
       setTimeout(() => {
         dispatch(resetAddProduct());
       }, 900); // 3 saniye sonra çalışacak
-      console.log(AddNewProductMessage, "5000eeeeeeeeeeeeeeeeeeeeeeeee");
 
     } else if (addProductStatus === "success") {
       if (page === 2 || page === 3 || page === 4 || page === 5) {
@@ -116,7 +113,6 @@ export const UrunEkleScreen = () => {
 
     }
     else {
-      console.log("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB")
     }
 
 
@@ -124,7 +120,6 @@ export const UrunEkleScreen = () => {
   }, [addProductStatus,])
 
 
-  console.log(productImage, "pppppppppppppppppppp");
 
 
   const addNewProduct = async () => {
@@ -299,8 +294,6 @@ export const UrunEkleScreen = () => {
     }
   };
 
-  console.log(birim, "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb");
-  console.log(categoryValue, "categorvvvvvvvvvvvvvvvvv");
 
   return (
 
